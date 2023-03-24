@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+}
+
+group 'com.github.nichxlas98'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+allprojects {
+    repositories {
+        maven { url 'https://jitpack.io' }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.github.JnCrMx:discord-game-sdk4j:master-SNAPSHOT'
+    implementation 'org.json:json:20171018'
+    implementation 'org.slf4j:slf4j-simple:2.0.7'
+    implementation 'org.ow2.asm:asm:9.3'
+    implementation group: 'com.kohlschutter.junixsocket', name: 'junixsocket-common', version: '2.0.4'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.2'
+}
+
+test {
+    useJUnitPlatform()
+}
